@@ -9,21 +9,56 @@ def iterator(myList : list):
             print(f'\'{i}\'')
         else:
             print(f'{i}')
+def switchOff():
+    pass    
 def buildANewList(myListCopy: list):
     buildANewList= []
     for i in myListCopy:
         wordToAdd = ""
         for ii in i:
-            if ii != "|":
+            if ii not in ["|", "*", ">", "-", "`", "[", "]", "!", "(", ")"]:
                 wordToAdd += ii
             else:
-                ii = "\|" #test:for edu.p:can i use <ii> instead?
-                wordToAdd += ii
+                #i can use a match case here
+                #>if I really wanted
+                #>to.
+                if ii == "|":
+                    ii = "\|" #test:for edu.p:can i use <ii> instead?
+                    wordToAdd += ii
+                if ii == "*":
+                    ii = "\*" #test:for edu.p:can i use <ii> instead?
+                    wordToAdd += ii
+                if ii == ">":
+                    ii = "\>" #test:for edu.p:can i use <ii> instead?
+                    wordToAdd += ii
+                if ii == "-":
+                    ii = "\-" #test:for edu.p:can i use <ii> instead?
+                    wordToAdd += ii
+                if ii == "`":
+                    ii = "\`" #test:for edu.p:can i use <ii> instead?
+                    wordToAdd += ii
+                #it could get messy starting from here:
+                if ii == "[":
+                    ii = "\[" #test:for edu.p:can i use <ii> instead?
+                    wordToAdd += ii
+                #could get messy starting here:
+                if ii == "|]":
+                    ii = "\]" #test:for edu.p:can i use <ii> instead?
+                    wordToAdd += ii
+                if  ii == "!":
+                    ii = "\!" #test:for edu.p:can i use <ii> instead?
+                    wordToAdd += ii
+                if ii == "|(":
+                    ii = "\(" #test:for edu.p:can i use <ii> instead?
+                    wordToAdd += ii
+                if  ii == ")":
+                    ii = "\)" #test:for edu.p:can i use <ii> instead?
+
         buildANewList.append(wordToAdd)
     return buildANewList
 
 #opens and closes file
-filename = "../README.md"
+filename = "./ignoredFileREADME.md"
 with open(filename, "r") as fn:
     read_data = fn.read()
 
@@ -51,7 +86,7 @@ for i in aNewList:
     aString += i + '\n'
 print(aString)
 
-filename2 = "../BUILT_AREADME.md"
+filename2 = "./BUILT_AREADME.md"
 
 with open(filename2, "w") as fl2:
     fl2.write(aString)
