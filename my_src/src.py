@@ -16,7 +16,7 @@ def buildANewList(myListCopy: list):
     for i in myListCopy:
         wordToAdd = ""
         for ii in i:
-            if ii not in ["|", "*", ">", "-", "`", "[", "]", "!", "(", ")"]:
+            if ii not in ["|", "#", "*", ">", "-", "`", "[", "]", "!", "(", ")"]:
                 wordToAdd += ii
             else:
                 #i can use a match case here
@@ -24,6 +24,9 @@ def buildANewList(myListCopy: list):
                 #>to.
                 if ii == "|":
                     ii = "\|" #test:for edu.p:can i use <ii> instead?
+                    wordToAdd += ii
+                if ii == "#":
+                    ii = "\#" #test:for edu.p:can i use <ii> instead?
                     wordToAdd += ii
                 if ii == "*":
                     ii = "\*" #test:for edu.p:can i use <ii> instead?
