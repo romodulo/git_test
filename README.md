@@ -4,7 +4,7 @@ filename: [title]
 
 ## Basic Syntax
 
- 	| Syntax | Description |
+| Syntax | Description |
 | ----------- | ----------- |
 | Header | Title |
 | Paragraph | Text |
